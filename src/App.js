@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import {Button, Form, FormControl} from 'react-bootstrap'
 export default class App extends Component {
 
   render (){
@@ -9,7 +9,7 @@ export default class App extends Component {
        <div className="App-title"> Music Master </div>
       <div>
       <input placeholder =" search for an artist.." />
-      <button > Submit </button>
+      <Button > Submit </Button>
 
        </div>
         <div className="Profile"> 
@@ -24,6 +24,5 @@ export default class App extends Component {
   	)
 
   }
-
 
 }
