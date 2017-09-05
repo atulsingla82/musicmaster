@@ -7,16 +7,23 @@ export default class Profile extends Component {
 
 render(){
 	 console.log("props", this.props)
+	
+	let artist = { name: '', musicbrainz_image_url: ""}
+	 if (this.props.artist !== null ){
+
+	 	artist = this.props.artist
+	 }
+	
 return(
-     
-  <div>
-
-
-<div> Profile Name </div>
-<div> Profile Followers </div>
-  </div>
-
-	)
+<div className= "Profile">     
+<div> {artist.name}</div>
+<img
+ alt=""
+ src={artist.musicbrainz_image_url}
+/>
+ 
+</div>
+)
 
 
 }

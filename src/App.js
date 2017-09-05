@@ -24,27 +24,26 @@ export default class App extends Component {
     
     // console.log('this.state',this.state)
     //================================================
-    //  Music Graph API
-    const apiKey = 'a4f84009c7dcb51b908706853f47c23c';
-    const BASE_URL = 'http://api.musicgraph.com/api/v2/artist/';
-    const FETCH_URL = BASE_URL + 'search?api_key='+ apiKey
-                      +'&name='+ this.state.query+'&limit=5';
-    // const FETCH_URL = `${BASE_URL}search?api_key=${apiKey}
-    //                   &name=${this.state.query}&limit=5`;                  
+    //  Spotify API
+    const acesstoken = 'BQDYlcLosEMGEIlrWE8T5brbFaWDC5SicfnK7mNcKZApSQsTZNks9Z0FNMzgfRcY6agj-35rHbgvpFO76pS1B2fmt319g_EGUdHMT91OEPgNT4vD3eGITTkzZ-_JEu6w_bnIpquWif7QS7NodRfqRYRXh6E'          
+    const BASE_URL = 'https://api.spotify.com/v1/search'
+    const FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1' + 'AuthorizationBearer' + acesstoken;
+    
      console.log('FetchURL', FETCH_URL);   
 
      fetch(FETCH_URL, {
-      method:'GET'
-    
+      method:'GET',
+      
+      
       })  
 
       .then(response => response.json())         
-      .then(json=> {
+      .then(json => (console.log(json))
         
-        const artist = json.data[0]
-        console.log(artist)
-        this.setState({artist});
-      })
+        // const artist = json.artists
+        // console.log('artist',artist)
+        // this.setState({artist});
+      )
    }
      
   render (){
