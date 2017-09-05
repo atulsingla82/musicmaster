@@ -8,7 +8,7 @@ export default class App extends Component {
 
     this.state = {
     
-    query:" "
+    query:""
     	
     }
 
@@ -17,6 +17,11 @@ export default class App extends Component {
    search() {
     
     console.log('this.state',this.state)
+    const apiKey = 'a4f84009c7dcb51b908706853f47c23c';
+    const BASE_URL = 'http://api.musicgraph.com/api/v2/artist/';
+    const FETCH_URL = BASE_URL + 'search?api_key='+ apiKey
+                      +'&name='+ this.state.query+ '&limit=1';
+     console.log('FetchURL', FETCH_URL);              
 
    }
 
