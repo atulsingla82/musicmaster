@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Image} from 'react-bootstrap';
 import './App.css'
 
 
@@ -17,7 +17,8 @@ render(){
 return(
     <div className= "Profile">     
 		
-		<img
+		<Image
+		    circle
 			alt="profile"
  			className="profile-img"
  			src={artist.images[0].url}
@@ -25,8 +26,8 @@ return(
     <div>
      <div className= "profile-info">  
       <div className="profile-name"> {artist.name}</div>
-		<div className="profile-followers"> {artist.followers.total}</div>
-		<div className="profile-genre">
+		<div className="profile-followers"> Followers: {artist.followers.total}</div>
+		<div className="profile-genre"> Genres : 
 		{
  		 artist.genres.map((genre,k) => {
           

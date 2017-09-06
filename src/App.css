@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Dancing+Script|Kalam|Satisfy');
 body{
 	background-image: url("images/background.jpg") ;
 	
@@ -12,9 +13,12 @@ body{
 }
 
 .App-title{
-	font-size: 26px;
-	color:white;
+	font-size: 36px;
+
+	color:#e35d5b;
+  font-family: 'Satisfy', cursive;
 }
+
 
 
  /*********** Profile ***********/
@@ -33,14 +37,14 @@ body{
   display:flex;
   flex-direction: column;
   justify-content: center;
-
+  font-family: 'Cardo', serif;
 }
 
 .profile-img{
-   width:200px;
-   height: 200px;
+   width:150px;
+   height: 150px;
    border: 4px solid white;
-   border-radius: 100px;
+   
    
    display:inline-block;
    
@@ -48,12 +52,13 @@ body{
 
 }
 .profile-name{
-
+  font-family: 'Dancing Script', cursive;
 	font-size: 26px;
     color: white;
 }
 .profile-followers , .profile-genre {
 	font-size: 20px;
+  font-family: 'Kalam', cursive;
 }
 
 /*********** Gallery ***********/
@@ -69,10 +74,9 @@ body{
 }
 
 .track-img{
-    width: 220px;
+  width: 220px;
 	height:220px;
-	object-fit: cover;
-	position: absolute;
+	
 
 }
 .track-text{

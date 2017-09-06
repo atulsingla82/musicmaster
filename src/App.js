@@ -33,7 +33,7 @@ export default class App extends Component {
     
     const BASE_URL = 'https://api.spotify.com/v1/search?'
     let FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1';
-    var access_token = 'BQAj1XSgYdjQ0z5yAC9DKkpcHizXC7zZqLGNH0tswYRFFa4ma2fTJdkvXsWOtD3sYGULquUzrqoriwOnAyG931YKnHVPRYhDmX9MTdTqHm4iga5AzPLN0Gd47d4UWsXbXcHJMscWMzGYB3-9QCW-5GZWVHQ'
+    var access_token = 'BQAbFIu_c_lvswSUYtDOlPzVC7YJdYE552oe00-mszd-VSXJVuh3UDwzsFCvg2T9qz77OIeiwF5uGU4CMIBXGGeBRnvfgv0TVpZQAqr0288YCxK8WnNcqnmXv40U7VeDQwlBokpB28fpY8-rxPidyCxfSRM'
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/' 
      console.log('FetchURL', FETCH_URL);   
                
@@ -88,6 +88,7 @@ export default class App extends Component {
         <InputGroup>
 
           <FormControl
+          inline
           value={this.state.query}
           onChange = {event =>{this.setState({query:event.target.value})}}
           onKeyPress = {event => {

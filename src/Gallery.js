@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css'
-
+import {Image} from 'react-bootstrap';
 export default class Gallery extends Component {
 constructor(props){
 		super(props);
@@ -64,7 +64,8 @@ return (
         className = "track"
         onClick = {() => this.playAudio(track.preview_url)}
        >
-       <img 
+       <Image 
+        thumbnail
         src={trackImg}
         className="track-img"
         alt="track"
