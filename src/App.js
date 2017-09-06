@@ -25,25 +25,35 @@ export default class App extends Component {
     // console.log('this.state',this.state)
     //================================================
     //  Spotify API
-    const acesstoken = 'BQDYlcLosEMGEIlrWE8T5brbFaWDC5SicfnK7mNcKZApSQsTZNks9Z0FNMzgfRcY6agj-35rHbgvpFO76pS1B2fmt319g_EGUdHMT91OEPgNT4vD3eGITTkzZ-_JEu6w_bnIpquWif7QS7NodRfqRYRXh6E'          
-    const BASE_URL = 'https://api.spotify.com/v1/search'
-    const FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1' + 'AuthorizationBearer' + acesstoken;
     
+    const BASE_URL = 'https://api.spotify.com/v1/search?'
+    const FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1';
+    var access_token = 'BQDx9DUjXG3Ipx2OsfgCfr1MqMzA5gi_gsuA3Ne0UelY7BZsrUVZfA3XzmbB190dgImpgeN1oxyloSpbV97QwE0iozNDnZi24asDdkz383uY8Vp9-2fd1wcnhhyIwsN85G9vGJar-pO5vApVuO6ZmArpU5M'
      console.log('FetchURL', FETCH_URL);   
-
-     fetch(FETCH_URL, {
+               
+     var myOptions={
       method:'GET',
+      headers: { 'Authorization': 'Bearer ' + access_token },
+      mode:'cors',
+      cache:'default'
       
       
-      })  
-
+      };  
+       fetch(FETCH_URL,myOptions)
       .then(response => response.json())         
-      .then(json => (console.log(json))
+      .then(json => {
+        const artist = json.artists.items[0]
+
+        console.log('artist',artist)
         
-        // const artist = json.artists
-        // console.log('artist',artist)
-        // this.setState({artist});
-      )
+        this.setState({artist:artist});
+
+
+      })
+        
+        
+        
+      
    }
      
   render (){
