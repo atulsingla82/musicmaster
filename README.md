@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). that lets you search for your favorite artist and preview their top 10 tracks. Utilizes Spotify's API
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).Search for your favorite artist and preview their top 10 tracks. Utilizes Spotify's API
 
 
 
