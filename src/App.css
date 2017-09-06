@@ -4,15 +4,17 @@
 }
 
 .App-title{
-
 	font-size: 26px;
 }
 
+
+ /* Profile */
 
 .profile{
 
 	display: flex;
 	justify-content: center;
+
 }
 
 .profile-info{
@@ -30,8 +32,10 @@
    height: 200px;
    border: 4px solid black;
    border-radius: 75px;
-   object-fit: cover;
-
+   
+   display:inline-block;
+   
+   
 
 }
 .profile-name{
@@ -61,4 +65,15 @@
 	object-fit: cover;
 	position: absolute;
 
+}
+.track-text{
+  background-color: black;
+  color:white;
+  opacity: 0.75;
+  width:214px;
+  margin-left: 3px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
 }
