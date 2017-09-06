@@ -1,3 +1,11 @@
+body{
+	background-image: url("images/background.jpg") ;
+	
+}
+ 
+
+
+/* App*/
 .App{
 	text-align: center;
 	padding:5%;
@@ -5,20 +13,21 @@
 
 .App-title{
 	font-size: 26px;
+	color:white;
 }
 
 
- /* Profile */
+ /*********** Profile ***********/
 
 .profile{
-
+    
 	display: flex;
 	justify-content: center;
 
 }
 
 .profile-info{
-  
+  color:white;
   margin-left: 10px;
   text-align: center;
   display:flex;
@@ -30,8 +39,8 @@
 .profile-img{
    width:200px;
    height: 200px;
-   border: 4px solid black;
-   border-radius: 75px;
+   border: 4px solid white;
+   border-radius: 100px;
    
    display:inline-block;
    
@@ -41,13 +50,13 @@
 .profile-name{
 
 	font-size: 26px;
-
+    color: white;
 }
 .profile-followers , .profile-genre {
 	font-size: 20px;
 }
 
-/*Gallery */
+/*********** Gallery ***********/
 
 .track{
     display: inline-block;
@@ -76,4 +85,39 @@
   position: absolute;
   bottom: 0;
   padding: 5px;
+}
+
+.track-play{
+	width: 220px;
+	height:220px;
+	
+	position: absolute;
+}
+.track-play-inner{
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  background-color: black;
+  opacity: 0;
+  border-radius: 30px;
+  width:60px;
+  height: 60px;
+  color: white;
+  padding-top: 13px;
+  margin-left: 80px;
+  margin-top:80px;
+}
+.track-play-inner:hover{
+	opacity: 0.8;
+	animation-name:fade-in;
+	animation-duration: 0.5s;
+}
+@keyframes fade-in{
+
+	from{
+		opacity: 0;
+	}
+	to {
+		opacity: 0.8
+	}
 }
