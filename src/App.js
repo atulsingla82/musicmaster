@@ -7,6 +7,9 @@ import { FormGroup,InputGroup, Glyphicon, FormControl} from 'react-bootstrap'
 import './App.css'
 
 import Profile from './Profile'
+
+import Gallery from './Gallery'
+
 export default class App extends Component {
 
   // Setting  Initial state to an empty string
@@ -15,8 +18,10 @@ export default class App extends Component {
 
     this.state = {
     query:"",
-    artist: null	
-    	 }
+    artist: null,
+    tracks:[]
+    
+    }
 
   }
    
@@ -27,11 +32,12 @@ export default class App extends Component {
     //  Spotify API
     
     const BASE_URL = 'https://api.spotify.com/v1/search?'
-    const FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1';
-    var access_token = 'BQDx9DUjXG3Ipx2OsfgCfr1MqMzA5gi_gsuA3Ne0UelY7BZsrUVZfA3XzmbB190dgImpgeN1oxyloSpbV97QwE0iozNDnZi24asDdkz383uY8Vp9-2fd1wcnhhyIwsN85G9vGJar-pO5vApVuO6ZmArpU5M'
+    let FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1';
+    var access_token = 'BQA55z7CVS9GuP6Iv-Hj5shsSMJ97dlxC8W1MsDS9c63pT69DrfITJBW6GqmpYDAOCTnCU0m6lRpV-rz2tn5FgjIVxpdLpkSsc5CqE6qUlfsAS33jlXN9q16TcQ-Flic3SGUcjPAMwW39VMMUzsD4yPNJt8'
+    const ALBUM_URL = 'https://api.spotify.com/v1/artists/' 
      console.log('FetchURL', FETCH_URL);   
                
-     var myOptions={
+     var searchArtist={
       method:'GET',
       headers: { 'Authorization': 'Bearer ' + access_token },
       mode:'cors',
@@ -39,15 +45,31 @@ export default class App extends Component {
       
       
       };  
-       fetch(FETCH_URL,myOptions)
+       fetch(FETCH_URL,searchArtist)
       .then(response => response.json())         
       .then(json => {
-        const artist = json.artists.items[0]
+      const artist = json.artists.items[0]
 
         console.log('artist',artist)
         
         this.setState({artist:artist});
+       
+       FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`
+       var searchAlbum = {
+       method:'GET',
+      headers: { 'Authorization': 'Bearer ' + access_token },
+      mode:'cors',
+      cache:'default'
 
+       };
+
+       fetch(FETCH_URL,searchAlbum)
+      .then(response => response.json())  
+      .then(json => {
+        console.log('top tracks' , json)
+        const tracks = json.tracks;
+        this.setState({tracks});
+      })
 
       })
         
@@ -84,10 +106,18 @@ export default class App extends Component {
          </InputGroup.Addon>
        </InputGroup>
      </FormGroup>
-      
-        <Profile artist = {this.state.artist}/>
-      <div className="Gallery"> Gallery </div>
+     {
 
+      this.state.artist !== null 
+     ? 
+     <div>
+     <Profile artist = {this.state.artist}/>
+      <Gallery tracks = {this.state.tracks}/>
+     </div>
+     : <div> </div>
+     }
+      
+        
       </div>
     
    

@@ -19,7 +19,7 @@ return(
 		
 		<img
 			alt="profile"
- 			className="profile-image"
+ 			className="profile-img"
  			src={artist.images[0].url}
 			/>
     <div>

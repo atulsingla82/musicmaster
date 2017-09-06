@@ -2,3 +2,63 @@
 	text-align: center;
 	padding:5%;
 }
+
+.App-title{
+
+	font-size: 26px;
+}
+
+
+.profile{
+
+	display: flex;
+	justify-content: center;
+}
+
+.profile-info{
+  
+  margin-left: 10px;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.profile-img{
+   width:200px;
+   height: 200px;
+   border: 4px solid black;
+   border-radius: 75px;
+   object-fit: cover;
+
+
+}
+.profile-name{
+
+	font-size: 26px;
+
+}
+.profile-followers , .profile-genre {
+	font-size: 20px;
+}
+
+/*Gallery */
+
+.track{
+    display: inline-block;
+	width: 220px;
+	height:220px;
+	margin:10px;
+	text-align: left;
+	cursor: pointer;
+	position: relative;
+}
+
+.track-img{
+    width: 220px;
+	height:220px;
+	object-fit: cover;
+	position: absolute;
+
+}
