@@ -33,7 +33,7 @@ export default class App extends Component {
     
     const BASE_URL = 'https://api.spotify.com/v1/search?'
     let FETCH_URL = BASE_URL + 'q='+ this.state.query + '&type=artist&limit=1';
-    var access_token = 'BQDE-8CcBlniQo2HTuLYdqphSE8ZcKupZd0mHau5kcSqFbrhZ1D10Qahoboa9kn_Uu3y2wjsVbpdepVmgRDffZKkDdriH-XroNSMbJLkgXeNAAGLdKMbjUfTTCYjWKFpAdp6sDPNjdu6SKKaUI044szjZvo'
+    var access_token = 'BQAcxXU5WDyyYMk5XR6KXCOpOMYzWBUNB2YUyZjd54CkdnDaNotXZHzQrdOFm0Kk3v3d5EzPH0t_NHKQbztd6Rb7-vzTCetRNPEOS6jqCyQCTRU9pHcjBSmldXG0tvwo3hsOco2MFtLq-SgQfic1jPTglKE'
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/' 
      console.log('FetchURL', FETCH_URL);   
                
